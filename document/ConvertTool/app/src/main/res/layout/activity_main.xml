@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:weightSum="4"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+<RelativeLayout
+    android:id="@+id/distanceLayout"
+    android:orientation="vertical"
+    android:layout_weight="1"
+    android:layout_width="match_parent"
+    android:layout_height="0dp">
+<ImageView
+
+    android:id="@+id/distanceIcon"
+    android:layout_centerVertical="true"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentLeft="true"
+    android:src="@drawable/distance"
+    style="@style/myIcon"
+     />
+<TextView
+    android:layout_centerVertical="true"
+    android:layout_toEndOf="@id/distanceIcon"
+    android:layout_toRightOf="@id/distanceIcon"
+    android:textSize="25dp"
+    android:text="Chuyển Đổi Khoản Cách"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
+</RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/weightLayout"
+
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <ImageView
+
+            android:id="@+id/weightIcon"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/weight"
+            style="@style/myIcon"
+            />
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/weightIcon"
+            android:layout_toRightOf="@id/weightIcon"
+            android:textSize="25dp"
+            android:text="Chuyển Đổi Trọng Lượng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutTemperture"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <ImageView
+
+            android:id="@+id/tempertureId"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/temperature"
+            style="@style/myIcon"
+            />
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/tempertureId"
+            android:layout_toRightOf="@id/tempertureId"
+            android:textSize="25dp"
+            android:text="Chuyển Đổi Nhiệt Độ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutSpeed"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <ImageView
+
+            android:id="@+id/velocity"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/speed"
+            style="@style/myIcon"
+            />
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/velocity"
+            android:layout_toRightOf="@id/velocity"
+            android:textSize="25dp"
+            android:text="Chuyển tốc độ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>
