@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:weightSum="2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+ <LinearLayout
+     android:orientation="horizontal"
+     android:layout_weight="1"
+     android:layout_width="match_parent"
+     android:layout_height="0dp">
+
+     <RadioGroup
+         android:weightSum="2"
+         android:orientation="horizontal"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         tools:layout_editor_absoluteX="133dp"
+         tools:layout_editor_absoluteY="0dp">
+
+         <RadioButton
+             android:id="@+id/radioButton"
+             android:layout_width="0dp"
+             android:layout_height="match_parent"
+             android:layout_weight="1"
+             android:checked="true"
+             android:text="Male" />
+
+         <RadioButton
+             android:id="@+id/radioButton2"
+             android:layout_width="0dp"
+             android:layout_height="match_parent"
+             android:layout_weight="1"
+             android:text="Female" />
+     </RadioGroup>
+
+ </LinearLayout>
+    
+  <LinearLayout
+      android:weightSum="4"
+      android:layout_weight="1"
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="0dp">
+
+      <TextView
+          android:text="What do you want when you have free time?s"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
+
+      <CheckBox
+          android:id="@+id/checkBox"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="CheckBox"
+          />
+
+
+    <CheckBox
+        android:id="@+id/cbx1"
+        android:text="Shopping ness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+      <CheckBox
+          android:id="@+id/cbx2"
+          android:text="Play Game"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
+
+      <CheckBox
+          android:id="@+id/cbx3"
+          android:text="Football"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
+
+
+  </LinearLayout>
+    
+    
+
+</LinearLayout>
