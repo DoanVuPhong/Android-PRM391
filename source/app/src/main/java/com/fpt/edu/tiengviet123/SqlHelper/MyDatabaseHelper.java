@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 
+import com.fpt.edu.tiengviet123.R;
 import com.fpt.edu.tiengviet123.bean.VCharacter;
 
 import java.util.ArrayList;
@@ -52,6 +53,65 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     public void insertDefaultNote() {
         if (this.getNodteCount() == 0) {
+            VCharacter a = new VCharacter("a", "Con Cá", R.drawable.a, R.raw.a, R.raw.conca);
+            VCharacter a8 = new VCharacter("ă", "Mặt Trăng", R.drawable.a8, R.raw.a8, R.raw.ongtrang);
+            VCharacter a6 = new VCharacter("â", "Cái Cân", R.drawable.a6, R.raw.a6, R.raw.caican);
+            VCharacter b = new VCharacter("b", "Quả bóng", R.drawable.b, R.raw.b, R.raw.quabong);
+            VCharacter c = new VCharacter("c", "Cà chua", R.drawable.c, R.raw.c, R.raw.cachua);
+            VCharacter d = new VCharacter("d", "dâu tây", R.drawable.d, R.raw.d, R.raw.dautay);
+            VCharacter d9 = new VCharacter("đ", "Đu đủ", R.drawable.d9, R.raw.d9, R.raw.dudu);
+            VCharacter e = new VCharacter("e", "Ve sầu", R.drawable.e, R.raw.e, R.raw.vesau);
+            VCharacter e6 = new VCharacter("ê", "Con dê", R.drawable.e6, R.raw.e6, R.raw.conde);
+            VCharacter g = new VCharacter("g", "Con gà", R.drawable.g, R.raw.g, R.raw.conga);
+            VCharacter h = new VCharacter("h", "Hoa", R.drawable.h, R.raw.h, R.raw.hoa);
+            VCharacter i = new VCharacter("i", "Tivi", R.drawable.i, R.raw.i, R.raw.tivi);
+            VCharacter k = new VCharacter("k", "Kéo", R.drawable.k, R.raw.k, R.raw.hoa);
+            VCharacter l = new VCharacter("l", "Quả lê", R.drawable.l, R.raw.l, R.raw.quale);
+            VCharacter m = new VCharacter("m", "Quả me", R.drawable.m, R.raw.m, R.raw.quame);
+            VCharacter n = new VCharacter("n", "Cây Núm", R.drawable.n, R.raw.n, R.raw.caynam);
+            VCharacter o = new VCharacter("o", "con ong", R.drawable.o, R.raw.o, R.raw.conong);
+            VCharacter o6 = new VCharacter("ô", "Ô tô", R.drawable.o6, R.raw.o6, R.raw.oto);
+            VCharacter o7 = new VCharacter("ơ", "Kéo", R.drawable.o7, R.raw.o7, R.raw.caino);
+            VCharacter p = new VCharacter("p", "Pin", R.drawable.p, R.raw.p, R.raw.pin);
+            VCharacter q = new VCharacter("q", "Pin", R.drawable.q, R.raw.q, R.raw.qua);
+            VCharacter r = new VCharacter("r", "Con rùa", R.drawable.r, R.raw.r, R.raw.conrua);
+            VCharacter s = new VCharacter("s", "Con Sâu", R.drawable.s, R.raw.s, R.raw.consau);
+            VCharacter t = new VCharacter("t", "Trái táo", R.drawable.t, R.raw.t, R.raw.quatao);
+            VCharacter u = new VCharacter("u", "Cây dù", R.drawable.u, R.raw.u, R.raw.caydu);
+            VCharacter u7 = new VCharacter("ư", "Bình mực", R.drawable.u7, R.raw.u7, R.raw.binhmuc);
+            VCharacter v = new VCharacter("v", "Con voi", R.drawable.v, R.raw.v, R.raw.convoi);
+            VCharacter x = new VCharacter("x", "Xe đạp", R.drawable.x, R.raw.x, R.raw.xedap);
+            VCharacter y = new VCharacter("y", "Y tá", R.drawable.y, R.raw.y, R.raw.yta);
+
+            addNote(a);
+            addNote(a6);
+            addNote(a8);
+            addNote(b);
+            addNote(c);
+            addNote(d);
+            addNote(d9);
+            addNote(e);
+            addNote(e6);
+            addNote(g);
+            addNote(h);
+            addNote(i);
+            addNote(k);
+            addNote(l);
+            addNote(m);
+            addNote(n);
+            addNote(o);
+            addNote(o6);
+            addNote(o7);
+            addNote(p);
+            addNote(q);
+            addNote(r);
+            addNote(s);
+            addNote(t);
+            addNote(v);
+            addNote(u);
+            addNote(u7);
+            addNote(x);
+            addNote(y);
 
         }
 
@@ -70,11 +130,12 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         Log.i(TAG, "Adding  a note");
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_NAME, node.getFace());
-        contentValues.put(COLUMN_IMAGE_SOURCE_ID, node.getContent());
+        contentValues.put(COLUMN_CHARACTER_CONTENT, node.getContent());
         contentValues.put(COLUMN_IMAGE_SOURCE_ID, node.getImageSrcId());
         contentValues.put(COLUMN_BASE_AUDIO_SOURCE_ID, node.getBaseAudioId());
         contentValues.put(COLUMN_EXTENSION_AUDIO_SOURCE_ID, node.getExtentionAudioID());
         database.insert(TABLE_NAME, null, contentValues);
+
     }
 
     public VCharacter getVCharacter(String name) {
@@ -97,6 +158,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             VCharacter node = new VCharacter(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getInt(3), cursor.getInt(4), cursor.getInt(5));
             list.add(node);
         }
+
         return list;
     }
 
@@ -111,19 +173,21 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COLUMN_IMAGE_SOURCE_ID, node.getImageSrcId());
         contentValues.put(COLUMN_BASE_AUDIO_SOURCE_ID, node.getBaseAudioId());
         contentValues.put(COLUMN_EXTENSION_AUDIO_SOURCE_ID, node.getExtentionAudioID());
-
+        boolean result = db.update(TABLE_NAME, contentValues, COLUME_ID + " = ?",
+                new String[]{String.valueOf(node.getId())}) > 0;
         // updating row
-        return db.update(TABLE_NAME, contentValues, COLUME_ID + " = ?",
-                new String[]{String.valueOf(node.getId())})>0;
+        db.close();
+        return result;
+
 
     }
 
     public void deleteNote(VCharacter note) {
-        Log.i(TAG, "MyDatabaseHelper.updateNote ... " + note.getFace() );
+        Log.i(TAG, "MyDatabaseHelper.updateNote ... " + note.getFace());
 
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_NAME, COLUME_ID + " = ?",
-                new String[] { String.valueOf(note.getId()) });
+                new String[]{String.valueOf(note.getId())});
         db.close();
     }
 

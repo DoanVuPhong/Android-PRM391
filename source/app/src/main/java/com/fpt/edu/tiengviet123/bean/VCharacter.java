@@ -1,8 +1,11 @@
 package com.fpt.edu.tiengviet123.bean;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.io.Serializable;
 
-public class VCharacter implements Serializable{
+public class VCharacter  implements Serializable{
 
 private int id;
 private String face;
@@ -13,6 +16,14 @@ private int extentionAudioID;
 
     public VCharacter(int id, String face, String content, int imageSrcId, int baseAudioId, int extentionAudioID) {
         this.id = id;
+        this.face = face;
+        this.content = content;
+        this.imageSrcId = imageSrcId;
+        this.baseAudioId = baseAudioId;
+        this.extentionAudioID = extentionAudioID;
+    }
+
+    public VCharacter(String face, String content, int imageSrcId, int baseAudioId, int extentionAudioID) {
         this.face = face;
         this.content = content;
         this.imageSrcId = imageSrcId;
@@ -68,4 +79,6 @@ private int extentionAudioID;
     public void setExtentionAudioID(int extentionAudioID) {
         this.extentionAudioID = extentionAudioID;
     }
+
+
 }
