@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Spiner</string>
+    <string-array name="phone_type">
+        <item>Mobile</item>
+        <item>Home</item>
+        <item>Others</item>
+        <item>Custome</item>
+
+
+    </string-array>
+
+
+</resources>
