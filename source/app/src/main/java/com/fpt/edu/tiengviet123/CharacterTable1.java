@@ -63,7 +63,7 @@ public class CharacterTable1 extends AppCompatActivity {
             listBtn.get(i).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    playAudio(listBtn.get(finalI).getText().toString());
+                    Utils.playAudio(listBtn.get(finalI).getText().toString(),list,CharacterTable1.this);
                 }
             });
         }
@@ -72,29 +72,7 @@ public class CharacterTable1 extends AppCompatActivity {
     }
 
 
-    void playAudio(String text) {
-        int audioId = 0;
-        for (int i = 0; i < list.size(); i++) {
-            if (text.equalsIgnoreCase(list.get(i).getFace())) {
-                audioId = list.get(i).getBaseAudioId();
-            }
-        }
-        if (audioId != 0) {
-            MediaPlayer audio = MediaPlayer.create(this, audioId);
 
-            audio.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                @Override
-                public void onCompletion(MediaPlayer audio) {
-                    audio.reset();
-                    audio.release();
-                    audio=null;
-                }
-            });
-            audio.start();
-        }
-
-
-    }
 
 
 }
