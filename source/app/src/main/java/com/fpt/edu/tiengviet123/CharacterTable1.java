@@ -15,7 +15,8 @@ import java.util.List;
 public class CharacterTable1 extends AppCompatActivity {
     ArrayList<VCharacter> list;
     Button btnA, btnA6, btnA8, btnB, btnC, btnD, btnD9, btnE, btnE6, btnG, btnH, btnI, btnK, btnL, btnM;
-
+    Button btnChangeStyle;
+    boolean isUpercase=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,8 @@ public class CharacterTable1 extends AppCompatActivity {
         btnK = findViewById(R.id.btnK);
         btnL = findViewById(R.id.btnL);
         btnM = findViewById(R.id.btnM);
+
+
         final List<Button> listBtn = new ArrayList<>();
 
         listBtn.add(btnA);
@@ -63,16 +66,39 @@ public class CharacterTable1 extends AppCompatActivity {
             listBtn.get(i).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Utils.playAudio(listBtn.get(finalI).getText().toString(),list,CharacterTable1.this);
+                    Utils.playAudio(listBtn.get(finalI).getText().toString(), list, CharacterTable1.this);
                 }
             });
         }
 
+        // process button
+        btnChangeStyle = findViewById(R.id.btnChangeStyle);
+        btnChangeStyle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                for (int i = 0; i <listBtn.size() ; i++) {
+
+                        listBtn.get(i).setText(listBtn.get(i).getText().toString().toUpperCase());
+                }
+                if(isUpercase){
+                    isUpercase=false;
+                    for (int i = 0; i <listBtn.size() ; i++) {
+
+                        listBtn.get(i).setText(listBtn.get(i).getText().toString().toUpperCase());
+                    }
+
+                }else{
+                    isUpercase=true;
+                    for (int i = 0; i <listBtn.size() ; i++) {
+
+                        listBtn.get(i).setText(listBtn.get(i).getText().toString().toLowerCase());
+                    }
+                }
+            }
+        });
 
     }
-
-
-
 
 
 }

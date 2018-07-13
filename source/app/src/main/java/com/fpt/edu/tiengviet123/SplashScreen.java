@@ -21,7 +21,7 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
         try {
             Thread.sleep(2000);
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, Menu.class);
 
 
             MyDatabaseHelper mySqlHelper = new MyDatabaseHelper(this);

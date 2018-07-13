@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Leaf;
 import model.User;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -35,7 +36,7 @@ public class GetAllAccountServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-            List<User> users = UserDao.getAllUser();
+            List<Leaf> users = UserDao.getAllUser();
             JSONArray arr = new JSONArray();
             for (int i = 0; i < users.size(); i++) {
                   JSONObject obj = JSONObject.fromObject(users.get(i));
