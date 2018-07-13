@@ -11,9 +11,10 @@ import java.io.IOException;
 import java.util.List;
 
 public class Utils {
+    static MediaPlayer audio;
 
-    static void  playAudio(String text, List<VCharacter> list, Context context) {
-
+    static void playAudio(String text, List<VCharacter> list, Context context) {
+        stop();
         int audioId = 0;
         for (int i = 0; i < list.size(); i++) {
             if (text.equalsIgnoreCase(list.get(i).getFace())) {
@@ -21,29 +22,28 @@ public class Utils {
             }
         }
         if (audioId != 0) {
-            final MediaPlayer audio = MediaPlayer.create(context, audioId);
-
-
-            if(audio.isPlaying()){
-                return;
+            audio = MediaPlayer.create(context, audioId);
+            if (audio.isPlaying()) {
+                stop();
             }
-           // audio.setVolume(1,1);
-
 
             audio.start();
-
             audio.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer audio) {
-                    audio.reset();
-                    audio.release();
-                    audio=null;
+                    stop();
                 }
             });
-
         }
+    }
 
 
+    static void stop() {
+        if (audio != null) {
+            audio.reset();
+            audio.release();
+            audio = null;
+        }
     }
 
 

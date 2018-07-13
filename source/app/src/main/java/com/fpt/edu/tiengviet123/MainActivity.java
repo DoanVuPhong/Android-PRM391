@@ -12,7 +12,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView imgView;
 
 
     @Override
@@ -20,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        imgView = findViewById(R.id.imgView);
 
         Bundle bd =  getIntent().getBundleExtra("data");
 
