@@ -20,7 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".CharacterTable1" />
-        <activity android:name=".Menu"></activity>
+        <activity android:name=".Menu" />
+        <activity android:name=".CharacterTable2"></activity>
     </application>
 
 </manifest>

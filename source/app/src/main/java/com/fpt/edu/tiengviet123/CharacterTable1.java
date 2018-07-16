@@ -1,5 +1,6 @@
 package com.fpt.edu.tiengviet123;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,7 @@ public class CharacterTable1 extends AppCompatActivity {
     Button btnA, btnA6, btnA8, btnB, btnC, btnD, btnD9, btnE, btnE6, btnG, btnH, btnI, btnK, btnL, btnM;
     Button btnChangeStyle;
     boolean isUpercase=false;
+    Button btnNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +97,19 @@ public class CharacterTable1 extends AppCompatActivity {
                         listBtn.get(i).setText(listBtn.get(i).getText().toString().toLowerCase());
                     }
                 }
+            }
+        });
+
+        btnNext = findViewById(R.id.btnNext);
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("list", list);
+                Intent i = new Intent(CharacterTable1.this, CharacterTable2.class);
+                i.putExtra("data", bundle);
+                startActivity(i);
+
             }
         });
 
