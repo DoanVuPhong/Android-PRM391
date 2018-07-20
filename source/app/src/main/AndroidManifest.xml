@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashTheme">
@@ -20,7 +19,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".CharacterTable1" />
-        <activity android:name=".Menu"></activity>
+        <activity android:name=".Menu" />
+        <activity android:name=".CharacterTable2" />
+        <activity android:name=".Details"></activity>
     </application>
 
 </manifest>
