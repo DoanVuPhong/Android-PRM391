@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.fpt.edu.tiengviet123.bean.VCharacter;
 
@@ -12,7 +13,8 @@ import java.util.ArrayList;
 
 public class Menu extends AppCompatActivity {
     ArrayList<VCharacter> list;
-    Button btnTableCharacter;
+    Button btnTableCharacter, btnCamera,btnDetails;
+
 
 
     @Override
@@ -32,5 +34,33 @@ public class Menu extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        btnDetails=findViewById(R.id.btnDetails);
+        btnDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Menu.this,Details.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("list", list);
+                i.putExtra("data", bundle);
+                startActivityForResult(i,2);
+            }
+        });
+
+
+        btnCamera= findViewById(R.id.btnCamera);
+        btnCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent launchIntent= getPackageManager().getLaunchIntentForPackage("com.fpt.edu.arcamera");
+                if (launchIntent != null) {
+                    startActivity(launchIntent);//null pointer check in case package name was not found
+                }else{
+                    Toast.makeText(Menu.this, "ERROR When lauch Intent from other app",Toast.LENGTH_LONG).show();
+
+                }
+            }
+        });
+
     }
 }

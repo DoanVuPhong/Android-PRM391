@@ -1,0 +1,43 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<display-name>Event Question Management</display-name>
+	<welcome-file-list>
+		<welcome-file>/register.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- For web context -->
+	<servlet>
+		<servlet-name>Master-Dispatcher</servlet-name>
+		<!-- This is the name of parameter that Spring define in the framework we just use it and doesn't make any question about this config -->
+		<servlet-class>
+                        org.springframework.web.servlet.DispatcherServlet
+                </servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/swd_web_config.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Master-Dispatcher</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	<!-- For root context -->
+	<listener>
+		<listener-class>
+                  org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+
+	<context-param>
+<!-- This is the name of parameter that Spring define in the framework we just use it and doesn't make any question about this config -->
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/swd_core_config.xml</param-value>
+	</context-param>
+
+
+</web-app>

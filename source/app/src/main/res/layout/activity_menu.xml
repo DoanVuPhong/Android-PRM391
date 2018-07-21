@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#fff"
     android:weightSum="10"
     tools:context=".Menu">
 
@@ -28,6 +29,7 @@
             android:gravity="center">
 
             <Button
+                style="@style/buttonMenu"
                 android:id="@+id/btnCharacterTable1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -43,9 +45,11 @@
             android:gravity="center">
 
             <Button
+                android:id="@+id/btnDetails"
+                style="@style/buttonMenu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bảng chử cái" />
+                android:text="Học Bằng Thẻ" />
         </LinearLayout>
 
         <LinearLayout
@@ -54,9 +58,11 @@
             android:layout_weight="1"
             android:gravity="center">
             <Button
+                style="@style/buttonMenu"
+                android:id="@+id/btnCamera"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bảng chử cái" />
+                android:text="AR Camera" />
         </LinearLayout>
 
 

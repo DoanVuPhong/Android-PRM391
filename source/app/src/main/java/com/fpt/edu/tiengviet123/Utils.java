@@ -19,6 +19,8 @@ public class Utils {
         for (int i = 0; i < list.size(); i++) {
             if (text.equalsIgnoreCase(list.get(i).getFace())) {
                 audioId = list.get(i).getBaseAudioId();
+            }else if(text.equalsIgnoreCase(list.get(i).getContent())){
+                audioId = list.get(i).getExtentionAudioID();
             }
         }
         if (audioId != 0) {
@@ -26,7 +28,6 @@ public class Utils {
             if (audio.isPlaying()) {
                 stop();
             }
-
             audio.start();
             audio.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override

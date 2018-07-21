@@ -4,6 +4,10 @@
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 	<display-name>Event Question Management</display-name>
+	<welcome-file-list>
+		<welcome-file>/register.jsp</welcome-file>
+	</welcome-file-list>
+
 	<!-- For web context -->
 	<servlet>
 		<servlet-name>Master-Dispatcher</servlet-name>
@@ -22,12 +26,11 @@
 		<servlet-name>Master-Dispatcher</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
 	<!-- For root context -->
 	<listener>
 		<listener-class>
                   org.springframework.web.context.ContextLoaderListener
-                </listener-class>
+		</listener-class>
 	</listener>
 
 	<context-param>
@@ -35,5 +38,6 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/swd_core_config.xml</param-value>
 	</context-param>
+
 
 </web-app>

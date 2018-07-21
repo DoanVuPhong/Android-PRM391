@@ -31,14 +31,6 @@ import javax.xml.bind.annotation.XmlTransient;
  */
 @Entity
 @Table(name = "event")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Event.findAll", query = "SELECT e FROM Event e")
-    , @NamedQuery(name = "Event.findById", query = "SELECT e FROM Event e WHERE e.id = :id")
-    , @NamedQuery(name = "Event.findByLocation", query = "SELECT e FROM Event e WHERE e.location = :location")
-    , @NamedQuery(name = "Event.findByCode", query = "SELECT e FROM Event e WHERE e.code = :code")
-    , @NamedQuery(name = "Event.findByStartTime", query = "SELECT e FROM Event e WHERE e.startTime = :startTime")
-    , @NamedQuery(name = "Event.findByStatus", query = "SELECT e FROM Event e WHERE e.status = :status")})
 public class Event implements Serializable {
 
     private static final long serialVersionUID = 1L;
